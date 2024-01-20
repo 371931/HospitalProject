@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Medicals</title>
+    <link rel="stylesheet" href="../css/docLogin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="left"><img src="../images/logo.png" alt=""></div>
+            <div class="right" style="width: 200px;"><button class="button"> <span class="svgIcon"> < </span> </button></div>
+        </div>
+
+        <div class="form">
+            <div>
+            <p>Login</p>
+            <form id="loginForm" action="" method="post">
+                <label for="mUse">Username : </label>
+                <input type="text" placeholder="Username" id="mUse" name="adUse" autofocus>
+                <label for="mPass">Password : </label>
+                <span class="passi"><input type="password" name="adPass" id="mPass" placeholder="Password"> <img src="../images/password-hide.svg" alt="" id="passEye" class="hide"></span>
+                <input type="button" value="Login">
+            </form>
+        </div>
+        </div>
+
+        <div class="footer">
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="assets/js/index.js"></script>
+    <script>
+        let key = document.getElementById("passEye");
+        let passIn = document.getElementById("mPass");
+        key.addEventListener("click",()=>{
+            key.classList.toggle("show"); 
+            if(key.classList.contains("show")){
+                key.src = "../images/password-show.svg";
+                passIn.type = "text";
+            }else{
+                key.src = "../images/password-hide.svg";
+                passIn.type = "password";
+            }
+            passIn.autofocus = true;
+        });
+    </script>
+</body>
+</html>

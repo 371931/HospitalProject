@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.nav{
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left > img{
+    width: 150px;
+    margin-left: 30%;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+.center ul {
+    list-style: none;
+    display: flex;
+}
+
+.center li {
+    margin-right: 20px;
+}
+.center a{
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    color: #265abc;
+    position: relative;
+    font-size: 20px;
+}
+.center a::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #265abc;
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    transition: 0.3s ease-in-out;
+    transform: scaleX(0);
+}
+.center a:hover::after{
+    transform: scaleX(100%);
+}
+.form {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.form > div {
+    width: 500px;
+    height: 500px;
+    background-color: rgba(38, 90, 188, 0.7);   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form > div p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.form > div form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.form > div form label {
+    text-align: left;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.form > div form input {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 25px;
+    border: none;
+}
+
+.form > div form input[type="button"] {
+    cursor: pointer;
+    background-color: #4CAF50; /* Change the background color as needed */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+}
+
+.form > div form input[type="button"]:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+}
+
+.passi {
+    position: relative;
+    width: 100%;
+}
+
+.passi img {
+    position: absolute;
+    width: 15px;
+    right: 20px;
+    top: 28%;
+    cursor: pointer;
+    z-index: 1;
+}
+.footer{
+    height: 56px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.footer > a{
+    margin-right: 50px;
+    text-decoration: none;
+    color: #265abc;
+    font-size: 18px;
+    position: relative;
+}
+.footer > a::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #265abc;
+    position: absolute;
+    left:0;
+    bottom:0;
+    transition: 0.3s ease-in-out;
+    transform: scaleX(0);
+}
+.footer > a:hover::after{
+    transform: scaleX(100%);
+}

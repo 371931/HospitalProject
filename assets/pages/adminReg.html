@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/adminReg.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="left"><img src="../images/logo.png" alt=""></div>
+        <div class="right" style="width: 200px;"><button class="button"> <span class="svgIcon"> < </span> </button></div>
+    </div>
+    <div class="container">
+        <form action="../pages/adminReg.html" method="post">
+            <p>Register</p>
+            <div class="nameDiv"> 
+                <div>
+                <label for="fName">First Name : </label>
+                <input type="text" name="fName" id="fName" autofocus placeholder="First Name">
+            </div>
+            <div>
+                <label for="lName">Last Name : </label>
+                <input type="text" name="lName" id="lName" placeholder="Last Name">
+            </div>
+            </div>
+
+            <label for="username">Username : </label>
+            <input type="text" name="username" id="username" placeholder="Username">
+            <label for="adRePass">Password : </label>
+            <span class="pasCon"><input type="password" name="adRePass" id="adRePass" placeholder="Password"><img src="../images/password-hide.svg" alt="" class="passEye"></span>
+            <label for="adReConPass">Confirm Password : </label>
+            <span class="pasCon"><input type="password" name="adReConPass" id="adReConPass" placeholder="Confirm Password"><img src="../images/password-hide.svg" alt="" class="passEye"></span>
+            <div class="gender">
+                <label for="male"> <input type="radio" value="male" name="gender" id="male"> Male</label>
+                <label for="female">
+                <input type="radio" value="female" name="gender" id="female"> Female</label>
+                <label for="other">
+                <input type="radio" value="other" name="gender" id="other"> Other</label>
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Register" id="regBtn">
+                <input type="button" value="Clear" id="clearBtn" onclick="clearer()">
+            </div>
+        </form>
+    </div>
+    <footer>
+    </footer>
+
+    <script>
+        let key = document.querySelectorAll(".passEye");
+        // let passIn = document.getElementById("mPass");
+        console.log(key);
+        key.forEach((ele)=>{
+            ele.addEventListener("click",()=>{
+            ele.classList.toggle("show"); 
+
+            let parentEle = ele.parentElement;
+            let passIn = parentEle.querySelector("input");
+
+            if(ele.classList.contains("show")){
+                ele.src = "../images/password-show.svg";
+                passIn.type = "text";
+            }else{
+                ele.src = "../images/password-hide.svg";
+                passIn.type = "password";
+            }
+            passIn.focus();
+        });
+        });
+
+        function clearer(){
+            let from = document.querySelector("form");
+            from.reset();
+        }
+    </script>
+</body>
+</html>
